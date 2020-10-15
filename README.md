@@ -89,6 +89,8 @@ If you don’t already have a static IP address, the install script will assist 
 
 5. For DNS provider, use “PiVPN-is-local-DNS” if running Pi-Hole. If not, you can point at your router or an external provider.
 
+_Note: PiVPN should automatically detect a PiHole DNS on your Pi and give you the option of selecting PiHole DNS as your provider._
+
 6. On the "Public IP or DNS" screen, select "DNS Entry" and enter the DNS name you chose in Step 4.
 
 ## Step 6: Set Up Port Forwarding On Your Router
@@ -96,3 +98,18 @@ This step will vary depending what brand of router you have. [This page](https:/
 has information on how to configure port forwarding on popular routers.
 
 You will need to forward UDP Port 51820 (or the port you selected during setup) to the IP address of your Raspberry Pi.
+
+## Step 6: Prepare your VPN Client Configurations
+It is recommended to create separate client identities for each device that may use your VPN. This way if a device is lost or the client key is compromised, you won't have  to change the keys for the rest of the devices.
+1.   For each client, run
+   ```bash
+   pivpn add
+   ```
+2. A Wireguard configuration file will be placed in the _configs_ directory under your home directory.
+3. In the next step you will use the configuration file to configure each client.
+4. Phones can be configured by generating a QR code on the Pi:
+    ```bash
+    pivpn -qr <clientID>
+    ```
+![pic7](https://raw.githubusercontent.com/cranrob/dns_at_home/master/img/7.PNG)
+
