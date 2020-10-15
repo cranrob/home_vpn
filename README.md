@@ -1,4 +1,4 @@
-
+# Basic Raspberry Pi Setup thanks to Muzamal Abadullah
 ## Step 1: Get the Raspberry Pi OS onto microSD card
 
 1. Download Raspberry Pi Imager from [https://www.raspberrypi.org/downloads/](https://www.raspberrypi.org/downloads/)
