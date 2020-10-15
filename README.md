@@ -37,9 +37,11 @@
      ```
  - a. Select 8 and enter, this will update the raspi-config tool. 
  - b. Select 1 and enter, change the default password. 
- - c. Run the following command on terminal
+ - c. It's a good idea to change your timezone in Localization settings
+ 
+5. Run the following command on terminal
     ```bash 
      sudo apt update && sudo apt full-upgrade
     ```
- - d. Reboot your Pi
+6. Reboot your Pi
 
