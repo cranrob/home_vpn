@@ -1,5 +1,4 @@
-# Basic Raspberry Pi Setup thanks to Muzamal Abadullah
-## Step 1: Get the Raspberry Pi OS onto microSD card
+## Step 1: Get the Raspberry Pi OS onto microSD card (Thanks to Muzamal)
 
 1. Download Raspberry Pi Imager from [https://www.raspberrypi.org/downloads/](https://www.raspberrypi.org/downloads/)
 2. install and launch Raspberry Pi Imager. 
@@ -16,7 +15,7 @@
     ![pi5](https://raw.githubusercontent.com/A3XX/dns_at_home/master/img/5.PNG)
 8. Safely remove the microSD card, insert the card into your Raspberry Pi. 
 
-## Step 2: Connect Raspberry Pi to your Home network
+## Step 2: Connect Raspberry Pi to your Home network (Thanks to Muzamal)
 1. Connect Ethernet cable and power adapter, there is no ON/OFF switch it will automatically power on.  
     ![step2p1](https://projects-static.raspberrypi.org/projects/raspberry-pi-getting-started/0e07cfe2a142a41e6c97611e94057de6dddde935/en/images/pi-plug-in.gif)
 2. Figure out your RPi's IP address, there are several methods.
@@ -45,3 +44,17 @@
     ```
 6. Reboot your Pi
 
+## Step 3: Set up Unattended Upgrades
+Your Rapberry Pi will be exposed to the Internet so it's important that it stays up-to-date!
+
+1. Install the Unattended Upgrades package
+    ```bash
+     sudo apt install unattended-upgrades
+    ```
+
+2. If you wish, you can do some customization including having your system send out an upgrade log via email whenever an upgrade is done (see docs)
+
+3. Activate Unattended Upgrades
+    ```bash
+     sudo dpkg-reconfigure --priority=low unattended-upgrades
+    ```
