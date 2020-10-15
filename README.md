@@ -31,9 +31,9 @@
      ssh pi@192.168.1.113
      ```
 4. We will do most of our configurations using a handy tool called “raspi-config”.
-     ```bash
-     sudo raspi-config
-     ```
+    ```bash
+    sudo raspi-config
+    ```
  - a. Select 8 and enter, this will update the raspi-config tool. 
  - b. Select 1 and enter, change the default password. 
  - c. It's a good idea to change your timezone in Localization settings
@@ -49,12 +49,50 @@ Your Rapberry Pi will be exposed to the Internet so it's important that it stays
 
 1. Install the Unattended Upgrades package
     ```bash
-     sudo apt install unattended-upgrades
+    sudo apt install unattended-upgrades
     ```
 
 2. If you wish, you can do some customization including having your system send out an upgrade log via email whenever an upgrade is done (see docs)
 
 3. Activate Unattended Upgrades
     ```bash
-     sudo dpkg-reconfigure --priority=low unattended-upgrades
+    sudo dpkg-reconfigure --priority=low unattended-upgrades
     ```
+    
+## Step 4: Obtain a DNS Name for your Home Network
+1. Get a free account at [FreeDNS](https://freedns.afraid.org/) (afraid.org)
+
+2. Pick a name for your network (subdomain) and choose one of their many domain names. e.g., _robsnet.hack-house.com_
+
+3. Keep your IP address up to date
+- a. On the FreeDNS site, click on "Dynamic DNS" on the laft panel
+- b. Near the bottom of the page, click on "Quick cron example"
+- c. Copy the last line of the displayed file (line may span more than one line)
+
+>`1,6,11,16,21,26,31,36,41,46,51,56 * * * * sleep 10 ; wget -O - http://freedns.afraid.org/dynamic/update.php?SecretCodeShhhh >> /tmp/freedns_robsnet_hack-house_com.log 2>&1 &`
+
+- d. On the Pi, run `crontab -e` and paste the line at the end of the file
+
+## Step 5: Install PiVPN
+If you don’t already have a static IP address, the install script will assist you in setting that up. We'll be installing a Wireguard VPN.
+1. Install required prerequisite packages
+   ```bash
+   sudo apt install -y dnsutils iptables-persistent
+   ```
+2. Run the download and install script for PiVPN
+   ```bash
+   curl -sSL https://install.pivpn.io | bash
+   ```
+3. When presented choose Wireguard (not OpenVPN)
+
+4. You’ll be able to change the default port if you wish (51820)
+
+5. For DNS provider, use “PiVPN-is-local-DNS” if running Pi-Hole. If not, you can point at your router or an external provider.
+
+6. On the "Public IP or DNS" screen, select "DNS Entry" and enter the DNS name you chose in Step 4.
+
+## Step 6: Set Up Port Forwarding On Your Router
+This step will vary depending what brand of router you have. [This page](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
+has information on how to configure port forwarding on popular routers.
+
+You will need to forward UDP Port 51820 (or the port you selected during setup) to the IP address of your Raspberry Pi.
