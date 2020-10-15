@@ -111,5 +111,5 @@ It is recommended to create separate client identities for each device that may 
     ```bash
     pivpn -qr <clientID>
     ```
-![pic7](https://raw.githubusercontent.com/cranrob/dns_at_home/master/img/7.PNG)
+![QR-pic](https://github.com/cranrob/home_vpn/raw/main/IMG/vpn-qr.jpg)
 
