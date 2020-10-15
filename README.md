@@ -113,3 +113,10 @@ It is recommended to create separate client identities for each device that may 
     ```
 ![QR-pic](https://github.com/cranrob/home_vpn/raw/main/IMG/vpn-qr.jpg)
 
+## Step 7: Install the Wireguard VPN Client on your devices and configure them
+1. Wireguard Client is available for Windows, MacOS, IOS, Android, and manhy other platforms.
+Check [the wireguard site](https://wireguard.com/install) for links.
+2. On phones, you can add a configuration using the option "Create from QR Code"
+3. On computers, you have to "Import tunnel from file" and give it the configuration file generated  in the previous step.
+
+## Step 8: Enjoy!
