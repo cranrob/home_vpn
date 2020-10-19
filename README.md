@@ -93,12 +93,6 @@ _Note: PiVPN should automatically detect a PiHole DNS on your Pi and give you th
 
 6. On the "Public IP or DNS" screen, select "DNS Entry" and enter the DNS name you chose in Step 4.
 
-## Step 6: Set Up Port Forwarding On Your Router
-This step will vary depending what brand of router you have. [This page](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
-has information on how to configure port forwarding on popular routers.
-
-You will need to forward UDP Port 51820 (or the port you selected during setup) to the IP address of your Raspberry Pi.
-
 ## Step 6: Prepare your VPN Client Configurations
 It is recommended to create separate client identities for each device that may use your VPN. This way if a device is lost or the client key is compromised, you won't have  to change the keys for the rest of the devices.
 1.   For each client, run
@@ -113,10 +107,16 @@ It is recommended to create separate client identities for each device that may 
     ```
 ![QR-pic](https://github.com/cranrob/home_vpn/raw/main/IMG/vpn-qr.jpg)
 
-## Step 7: Install the Wireguard VPN Client on your devices and configure them
+## Step 7: Set Up Port Forwarding On Your Router
+This step will vary depending what brand of router you have. [This page](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
+has information on how to configure port forwarding on popular routers.
+
+You will need to forward UDP Port 51820 (or the port you selected during setup) to the IP address of your Raspberry Pi.
+
+## Step 8: Install the Wireguard VPN Client on your devices and configure them
 1. Wireguard Client is available for Windows, MacOS, IOS, Android, and manhy other platforms.
 Check [the wireguard site](https://wireguard.com/install) for links.
 2. On phones, you can add a configuration using the option "Create from QR Code"
 3. On computers, you have to "Import tunnel from file" and give it the configuration file generated  in the previous step.
 
-## Step 8: Enjoy!
+## Step 9: Enjoy!
