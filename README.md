@@ -11,7 +11,7 @@
     ![pi3](https://raw.githubusercontent.com/A3XX/dns_at_home/master/img/3.PNG)
 6. Confirm and continue. 
     ![pi4](https://raw.githubusercontent.com/A3XX/dns_at_home/master/img/4.PNG)
-7. Once completed disconnect the microSD card and reconnect. create a blank **SSH** file wihout any extension on the microSD card on main directory. Make sure extension is not **.txt**,filename should be **SSH** not ssh.txt.
+7. Once completed disconnect the microSD card and reconnect. create a blank **SSH** file without any extension on the microSD card on main directory. Make sure extension is not **.txt**,filename should be **SSH** not ssh.txt.
     ![pi5](https://raw.githubusercontent.com/A3XX/dns_at_home/master/img/5.PNG)
 8. Safely remove the microSD card, insert the card into your Raspberry Pi. 
 
@@ -24,9 +24,9 @@
   - b. Check your router's DHCP lease page, you will need login/password for the router. 
   - c. Connect your Raspberry Pi to TV via HDMI, attached keyboard,use defaultusername:**pi** and password:**raspberry** and type**ifconfig** and enter.
 3. Once you have the IP address 
-  -a. On Windows pc open Putty and enter the IP address and clock oepn, a prompt will open click yes, default login as **pi** and  password **raspberry** and enter.
+  -a. On Windows pc open Putty and enter the IP address and click open, a prompt will open click yes, default login as **pi** and  password **raspberry** and enter.
       ![pic7](https://raw.githubusercontent.com/A3XX/dns_at_home/master/img/7.PNG)
-  -b. On Mac or Linux pc open terminal and connect ssh connection, replace IP address with your Raspberry Pi's IP addess.
+  -b. On Mac or Linux pc open terminal and connect ssh connection, replace IP address with your Raspberry Pi's IP address.
      ```bash
      ssh pi@192.168.1.113
      ```
@@ -45,7 +45,7 @@
 6. Reboot your Pi
 
 ## Step 3: Set up Unattended Upgrades
-Your Rapberry Pi will be exposed to the Internet so it's important that it stays up-to-date!
+Your Raspberry Pi will be exposed to the Internet so it's important that it stays up-to-date!
 
 1. Install the Unattended Upgrades package
     ```bash
@@ -65,7 +65,7 @@ Your Rapberry Pi will be exposed to the Internet so it's important that it stays
 2. Pick a name for your network (subdomain) and choose one of their many domain names. e.g., _robsnet.hack-house.com_
 
 3. Keep your IP address up to date
-- a. On the FreeDNS site, click on "Dynamic DNS" on the laft panel
+- a. On the FreeDNS site, click on "Dynamic DNS" on the left panel
 - b. Near the bottom of the page, click on "Quick cron example"
 - c. Copy the last line of the displayed file (line may span more than one line)
 
@@ -114,7 +114,7 @@ has information on how to configure port forwarding on popular routers.
 You will need to forward UDP Port 51820 (or the port you selected during setup) to the IP address of your Raspberry Pi.
 
 ## Step 8: Install the Wireguard VPN Client on your devices and configure them
-1. Wireguard Client is available for Windows, MacOS, IOS, Android, and manhy other platforms.
+1. Wireguard Client is available for Windows, MacOS, IOS, Android, and many other platforms.
 Check [the wireguard site](https://wireguard.com/install) for links.
 2. On phones, you can add a configuration using the option "Create from QR Code"
 3. On computers, you have to "Import tunnel from file" and give it the configuration file generated  in the previous step.
